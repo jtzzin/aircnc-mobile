@@ -25,7 +25,7 @@ export function Login({navigation}:LoginScreenProps){
     async function handleSubmit(){
       const response = await api.post('/session', {email})
       
-      const { _id } = response.data;
+      const { _id} = response.data;
       await AsyncStorage.setItem('user', _id);
       await AsyncStorage.setItem('techs', techs);
       // console.log(techs)
